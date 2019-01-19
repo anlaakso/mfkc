@@ -5,3 +5,4 @@ authors = ["lambdapony <anlaakso@protonmail.com>"]
 edition = "2018"
 
 [dependencies]
+indexmap = "1.0.2"
