@@ -29,8 +29,6 @@ impl MFHash {
 
 impl From<&str> for MFHash {
     fn from(string: &str) -> Self {
-        // Check value validity
-
         let len = string.len();
         let tmp: Vec<char> = string
             .chars()
@@ -77,8 +75,6 @@ impl ToString for MFHash {
     }
 }
 
-
-// Tests for NFHash
 
 #[cfg(test)]
 mod tests {

@@ -1,7 +1,7 @@
 [package]
 name = "MFKC"
 version = "0.1.0"
-authors = ["lambdapony <anlaakso@protonmail.com>"]
+authors = ["ponyloop <anlaakso@protonmail.com>"]
 edition = "2018"
 
 [dependencies]
