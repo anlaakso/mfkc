@@ -13,17 +13,15 @@ pub fn similarity(hash1: &MFHash, hash2: &MFHash) -> u32 {
     (*hash1)
         .iter()
         .fold(0u32, |cnt, (ch, val)| {
-            match map.contains_key(&ch) {
-                true => {
-                    let freq1 = val;
-                    let freq2 = map.get(&ch).unwrap();
-                    if freq1 == freq2 {
-                        cnt + freq1
-                    } else {
-                        cnt + freq1 + freq2
-                    }
+            if !map.contains_key(&ch) {
+                cnt
+            } else {
+                let freq = map.get(&ch).unwrap_or(&0u32);
+                if val == freq {
+                    cnt + val
+                } else {
+                    cnt + val + freq
                 }
-                _ => cnt
             }
         })
 }

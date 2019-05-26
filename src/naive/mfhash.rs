@@ -11,7 +11,7 @@ pub struct MFHash(Vec<(char, u32)>, usize);
 
 impl MFHash {
     pub fn new(source: &str, k: usize) -> Self {
-        let len = source.len();
+        let len: usize = source.len();
         let scores = source
             .chars()
             .into_iter()
@@ -54,7 +54,6 @@ impl Deref for MFHash{
         &self.0
     }
 }
-
 
 impl ToString for MFHash {
     fn to_string(&self) -> String {
@@ -114,7 +113,6 @@ mod tests {
         let hash2: String = MFHash::new(string2, 2).to_string();
         assert_eq!(hash2, "F9L8");
     }
-
 
     #[bench]
     fn hashing_bench(b: &mut Bencher) {
